@@ -29,8 +29,8 @@ public class RankingTest {
         snail1 = new Snail("Jeff Snailington", "Speed Merchant", 1);
         snail2 = new Snail("Wendy Slugsworth", "The Fastest Slug in the West", 2);
         snail3 = new Snail("Sliminho", "O Caracol Lindo", 3);
-        snail4 = new Snail("Samuel Snail", "Slowpoke", 4);
-        snail5 = new Snail("Jimmy Thunder", "Just Call Me Jimmy", 5);
+        snail4 = new Snail("Slimy Susie", "Slowpoke", 4);
+        snail5 = new Snail("Wesley Slimes", "Blade", 5);
         snail6 = new Snail("Gustav von Hammarshlug", "Der Schnecke", 6);
         snail7 = new Snail("Usain Slug", "The Red Stripe", 7);
         snail8 = new Snail("Shellz", "The Snail Formerly Known As", 8);
@@ -62,20 +62,32 @@ public class RankingTest {
 //        assertEquals(3, rankings.countSnails());
 //    }
 
-    @Test
-    public void canShowSnails() {
-        rankings.showAllSnails();
-    }
+//    @Test
+//    public void canShowSnails() {
+//        rankings.showAllSnails();
+//    }
 
     @Test
     public void canGetSnailByRank() {
         assertEquals("Name: Jeff Snailington, Nickname: Speed Merchant, Current Rank: 1", rankings.getSnailByRanking(1));
     }
 
+//    @Test
+//    public void canGetTenth() {
+//        rankings.promoteSnailToTenth(snail11);
+//        assertEquals("Name: Pistol Pete, Nickname: The Outcast, Current Rank: 10", rankings.getSnailByIndex(9).toString());
+//        rankings.showAllSnails();
+//    }
+
     @Test
-    public void canGetTenth() {
-        rankings.promoteSnailToTenth(snail11);
-        assertEquals("Name: Pistol Pete, Nickname: The Outcast, Current Rank: 10", rankings.getSnailByIndex(9).toString());
+    public void canGetSnailInListByName() {
+        assertEquals("Name: Sliminho, Nickname: O Caracol Lindo, Current Rank: 3", rankings.findSnailByName("Sliminho"));
     }
 
+    @Test
+    public void canPromoteSnailByOne() {
+        assertEquals("Name: Wesley Slimes, Nickname: Blade, Current Rank: 5", rankings.getSnailByRanking(5));
+        rankings.promoteSnailByOne(snail5);
+        assertEquals("Name: Wesley Slimes, Nickname: Blade, Current Rank: 4", rankings.getSnailByRanking(4));
+    }
 }
