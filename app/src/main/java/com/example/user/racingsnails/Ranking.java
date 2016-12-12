@@ -21,6 +21,13 @@ public class Ranking {
         this.rankings.add(snail);
     }
 
+    public String showAllSnails() {
+        for (Snail snail : rankings) {
+            System.out.println(snail.toString());
+        }
+        return null;
+    }
+
     public String getSnailByRanking(int ranking) {
         int index = ranking - 1;
         Snail snail = this.rankings.get(index);
