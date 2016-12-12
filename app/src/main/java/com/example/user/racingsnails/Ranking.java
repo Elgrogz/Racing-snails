@@ -66,4 +66,10 @@ public class Ranking {
         Collections.swap(rankings, snailToMoveUp, snailToMoveUp - 1);
         setSnailRankings();
     }
+
+    public void demoteSnailByOne(Snail snail) {
+        int snailToMoveDown = snail.getCurrentRank() - 1;
+        Collections.swap(rankings, snailToMoveDown, snailToMoveDown + 1);
+        setSnailRankings();
+    }
 }
