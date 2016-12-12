@@ -38,19 +38,19 @@ public class Ranking {
         return snail.toString();
     }
 
-    public void promoteSnailToTenth(Snail snail) {
-        this.rankings.remove(9);
-        this.rankings.add(snail);
-        snail.setCurrentRank(10);
-    }
-
-    public String findSnailByName(String name) {
+    public String getSnailByName(String name) {
         String found = null;
         for (Snail snail : rankings)
             if (snail.getName() == name) {
                 found = snail.toString();
             }
         return found;
+    }
+
+    public void promoteSnailToTenth(Snail snail) {
+        this.rankings.remove(9);
+        this.rankings.add(snail);
+        setSnailRankings();
     }
 
     public void setSnailRankings() {

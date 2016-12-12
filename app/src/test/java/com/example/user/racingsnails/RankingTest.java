@@ -82,7 +82,7 @@ public class RankingTest {
 
     @Test
     public void canGetSnailInListByName() {
-        assertEquals("Name: Sliminho, Nickname: O Caracol Lindo, Current Rank: 3", rankings.findSnailByName("Sliminho"));
+        assertEquals("Name: Sliminho, Nickname: O Caracol Lindo, Current Rank: 3", rankings.getSnailByName("Sliminho"));
     }
 
     @Test
