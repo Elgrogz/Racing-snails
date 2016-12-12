@@ -21,20 +21,22 @@ public class RankingTest {
     Snail snail8;
     Snail snail9;
     Snail snail10;
+    Snail snail11;
     Ranking rankings;
 
     @Before
     public void before() {
-        snail1 = new Snail("Jeff Snailington", "The Destroyer", 1);
-        snail2 = new Snail("Jemima Slugsworth", "The Fastest Slug in the West", 2);
-        snail3 = new Snail("Sliminho", "Snail Pele", 3);
+        snail1 = new Snail("Jeff Snailington", "Speed Merchant", 1);
+        snail2 = new Snail("Wendy Slugsworth", "The Fastest Slug in the West", 2);
+        snail3 = new Snail("Sliminho", "O Caracol Lindo", 3);
         snail4 = new Snail("Samuel Snail", "Slowpoke", 4);
-        snail5 = new Snail("Jimmy Thunder", "Speedster", 5);
-        snail6 = new Snail("Random snail", "a snail", 6);
+        snail5 = new Snail("Jimmy Thunder", "Just Call Me Jimmy", 5);
+        snail6 = new Snail("Gustav von Hammarshlug", "Der Schnecke", 6);
         snail7 = new Snail("Usain Slug", "The Red Stripe", 7);
         snail8 = new Snail("Shellz", "The Snail Formerly Known As", 8);
         snail9 = new Snail("Terry Tentacles", "Four Eyes", 9);
-        snail10 = new Snail("Billy the Bastard", "Bawjaws", 10);
+        snail10 = new Snail("Billy the Bastard", "The Horny Helix", 10);
+        snail11 = new Snail("Pistol Pete", "The Outcast", 11);
         ArrayList<Snail> snails = new ArrayList<Snail>();
         snails.add(snail1);
         snails.add(snail2);
@@ -67,8 +69,13 @@ public class RankingTest {
 
     @Test
     public void canGetSnailByRank() {
-        assertEquals("Name: Jeff Snailington, Nickname: The Destroyer, Current Rank: 1", rankings.getSnailByRanking(1));
+        assertEquals("Name: Jeff Snailington, Nickname: Speed Merchant, Current Rank: 1", rankings.getSnailByRanking(1));
     }
 
+    @Test
+    public void canGetTenth() {
+        rankings.promoteSnailToTenth(snail11);
+        assertEquals("Name: Pistol Pete, Nickname: The Outcast, Current Rank: 10", rankings.getSnailByIndex(9).toString());
+    }
 
 }

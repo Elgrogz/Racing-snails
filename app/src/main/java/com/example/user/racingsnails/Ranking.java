@@ -21,17 +21,26 @@ public class Ranking {
         this.rankings.add(snail);
     }
 
-    public String showAllSnails() {
+    public void showAllSnails() {
         for (Snail snail : rankings) {
             System.out.println(snail.toString());
         }
-        return null;
+    }
+
+    public Snail getSnailByIndex(int index) {
+        return this.rankings.get(index);
     }
 
     public String getSnailByRanking(int ranking) {
         int index = ranking - 1;
         Snail snail = this.rankings.get(index);
         return snail.toString();
+    }
+
+    public void promoteSnailToTenth(Snail snail) {
+        this.rankings.remove(9);
+        this.rankings.add(snail);
+        snail.setCurrentRank(10);
     }
 
 }
